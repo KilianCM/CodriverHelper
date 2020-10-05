@@ -1,0 +1,43 @@
+#parc-ferme {
+    h2 {
+        position: absolute;
+        transform: rotate(90deg);
+        right: -55px;
+        color: rgba(0,0,0,0.15);
+        font-size: 30px;
+        margin-top: 45px;
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+
+        &:not(:last-child) {
+            margin: 30px 0;
+        }
+
+        label.secondary {
+            font-size: 12px;
+        }
+
+        div {
+            #entry, #duration {
+                width: 160px !important;
+                height: 40px;
+            }
+            button {
+                margin-left: 10px;
+                width: 130px !important;
+            }
+
+            p.exit {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            p.secondary {
+                font-size: 14px;
+            }
+        }
+    }
+}

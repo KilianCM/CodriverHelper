@@ -1,0 +1,24 @@
+<div id="road-section">
+    <h2>LIAISON</h2>
+    <div class="input-group">
+        <label for="start">Heure de départ</label>
+        <div>
+            <nz-time-picker id="start" [(ngModel)]="time" nzSize="large" nzFormat="HH:mm"></nz-time-picker>
+            <button nz-button nzType="secondary" nzSize="large" (click)="setNow()">Maintenant</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="time-allowed">Temps imparti (en minutes)</label>
+        <div>
+            <nz-input-number id="time-allowed" [(ngModel)]="timeAllowed" nzSize="large" [nzMin]="1" [nzStep]="1"></nz-input-number>
+            <button nz-button nzType="primary" nzSize="large" (click)="computeTime()">Calculer</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label>Heure de pointage au prochain CH</label>
+        <div>
+            <p *ngIf="theoricTime" class="result">{{this.theoricTime | date:'HH:mm'}}</p>
+            <p *ngIf="!theoricTime" class="result">-- : --</p>
+        </div>
+    </div>
+</div>

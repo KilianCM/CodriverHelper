@@ -1,0 +1,39 @@
+:host {
+    text-align: center;
+    min-height: 100vh;
+}
+
+nz-header {
+    background-color: unset;
+    height: unset;
+}
+
+nz-footer {
+    line-height: 1.5;
+
+    .footer {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        margin: 0 auto;
+
+        p {
+            margin-bottom: unset;
+            margin-right: 5px;
+        }
+
+        img {
+            width: 100px;
+        }
+    }
+}
+
+nz-layout {
+    margin-bottom: 48px;
+    min-height: 100vh;
+
+    &:last-child {
+        margin: 0;
+    }
+}
+

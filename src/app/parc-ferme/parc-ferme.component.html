@@ -1,0 +1,29 @@
+<div id="parc-ferme">
+    <h2>PARC FERME</h2>
+    <div class="input-group">
+        <label for="entry">Heure d'entrée au parc</label>
+        <div>
+            <nz-time-picker id="entry" [(ngModel)]="entry" nzSize="large" nzFormat="HH:mm"></nz-time-picker>
+            <button nz-button nzType="secondary" nzSize="large" (click)="setNow()">Maintenant</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="duration">Durée (en minutes)</label>
+        <div>
+            <nz-input-number id="duration" [(ngModel)]="duration" nzSize="large" [nzMin]="1" [nzStep]="1"></nz-input-number>
+            <button nz-button nzType="primary" nzSize="large" (click)="computeExitHour()">Calculer</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label>Heure de sortie du parc</label>
+        <div>
+            <p *ngIf="exit" class="exit">{{this.exit | date:'HH:mm'}}</p>
+            <p *ngIf="!exit" class="exit">-- : --</p>
+        </div>
+        <label class="secondary">Autorisation d'entrer dans le parc</label>
+        <div>
+            <p *ngIf="entryAllowed" class="secondary">{{this.entryAllowed | date:'HH:mm'}}</p>
+            <p *ngIf="!entryAllowed" class="secondary">-- : --</p>
+        </div>
+    </div>
+</div>
